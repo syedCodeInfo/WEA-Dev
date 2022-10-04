@@ -1,0 +1,33 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@model WEA.AuthenticationPersistance.Collabration.Abstraction.IndoorRelay.LoginCredential
+@{
+}
+                    <div class="pt-4 pb-2">
+                     <h5 class="card-title text-center pb-0 fs-4">Login to Your Account</h5>
+                    <p class="text-center small">Enter your username & password to login</p>
+                  </div>
+                   <form asp-action="Index" class="row g-3 needs-validation" novalidate>
+                    
+                    <div class="col-12">
+                      <label for="yourEmail" class="form-label">Email Address</label>
+                      <input asp-for="Email" class="form-control" id="yourName" type="email" required>
+                      <div class="invalid-feedback">Please, enter your valid email address!</div>
+                    </div>
+
+                 
+                    <div class="col-12">
+                      <label for="yourPassword" class="form-label">Password</label>
+                      <input asp-for="Password" class="form-control" id="yourPassword" type="password" required>
+                      <div class="invalid-feedback">Please enter your password!</div>
+                    </div>
+
+                  
+                    <div class="col-12">
+                     <button class="btn btn-primary w-100" type="submit">Login</button>
+                    </div>
+                    <div class="col-12">
+                    <p class="small mb-0">Don't have account? <a asp-controller="AccountCreation" asp-action="Register">Create an account</a></p>
+                    </div>
+                  </form>

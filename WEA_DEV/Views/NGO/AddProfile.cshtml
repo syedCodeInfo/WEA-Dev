@@ -1,0 +1,86 @@
+﻿
+@model WEA.Profile.Collabaration.Abstraction.IndoorRelay.BasicDetails
+
+@{
+    ViewData["Title"] = "AddProfile";
+    Layout = "~/Views/Shared/_ngoLayout.cshtml";
+}
+
+  <div class="col-lg-12">
+
+          <div class="card">
+            <div class="card-body">
+                    @if( string.Equals(TempData["StatusInformation"],"requested") || string.Equals(TempData["StatusInformation"],"responded"))
+                     {
+                        if (string.Equals(TempData["StatusInformation"],"responded"))
+                            {
+                                   <div class="col-xl-12">
+
+          <div class="card">
+            <div class="card-body pt-3">
+              <!-- Bordered Tabs -->
+                <p>The admin accept your request, now you can join to the courses and open a finanical account <a class="nav-link " asp-controller="NGO" asp-action="ViewMyProfile">View My Profile</a></p>
+            </div>
+          </div>
+
+        </div>
+                            }
+                            else
+                            {
+                       <div class="alert alert-info alert-dismissible fade show" role="alert">
+                <i class="bi bi-info-circle me-1"></i>
+               your current status on @TempData["StatusInformation"]
+                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                    </div>
+                }
+             
+                }
+                else
+                {
+              <h5 class="card-title">Add Basic Information</h5>
+                 @if(TempData["AlertMessage"]!=null)
+                         {
+                        <div class="alert alert-success alert-dismissible fade show">
+                        @TempData["AlertMessage"]
+                         </div>
+                         }
+              <!-- Vertical Form -->
+              <form asp-action="AddProfile" class="row g-3">
+                <div class="col-12">
+                  <label for="inputNanme4" class="form-label">InAugration Date</label>
+                  <input asp-for="InaugrationDate" type="date" class="form-control" id="inputNanme4">
+                </div>
+               
+                <div class="col-12">
+                  <label for="inputEmail4" class="form-label">Address Line</label>
+                  <input asp-for="Line" type="text" class="form-control" id="inputEmail4">
+                </div>
+                <div class="col-12">
+                  <label for="inputPassword4" class="form-label">State</label>
+                  <input asp-for="State" type="text" class="form-control" id="inputPassword4">
+                </div>
+                <div class="col-12">
+                  <label for="inputAddress" class="form-label">City</label>
+                  <input asp-for="City" type="text" class="form-control" id="inputAddress" >
+                </div>
+                  <div class="col-12">
+                  <label for="inputNanme4" class="form-label">Pin Code</label>
+                  <input asp-for="PinCode" type="number" class="form-control" id="inputNanme4">
+                </div>
+              
+                   <div class="text-center">
+                  <button type="submit" class="btn btn-primary">Add Basic Information</button>
+                
+                </div> 
+               
+                
+              </form><!-- Vertical Form -->
+
+              }
+            </div>
+          </div>
+          </div>
+
+           
+
+

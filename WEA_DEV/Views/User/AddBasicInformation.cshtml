@@ -1,0 +1,104 @@
+﻿@model WEA.AccountCreation.Collabaration.Abstraction.InDoorRelay.UserInfo
+
+@{
+    ViewData["Title"] = "AddBasicInformation";
+    Layout = "~/Views/Shared/_userLayout.cshtml";
+}
+
+ <div class="col-lg-12">
+
+          <div class="card">
+            <div class="card-body">
+                    @if( string.Equals(TempData["StatusInformation"],"requested") || string.Equals(TempData["StatusInformation"],"responded"))
+                         {
+                            if (string.Equals(TempData["StatusInformation"],"responded"))
+                            {
+                                   <div class="col-xl-12">
+
+                                      <div class="card">
+                                        <div class="card-body pt-3">
+                                          <!-- Bordered Tabs -->
+                                            <p>The admin accept your request, now you can join to the courses and open a finanical account <a class="nav-link " asp-controller="User" asp-action="ViewMyProfile">View My Profile</a></p>
+                                        </div>
+                                      </div>
+
+                                    </div>
+                            }
+                            else
+                            {
+                                <div class="alert alert-info alert-dismissible fade show" role="alert">
+                                <i class="bi bi-info-circle me-1"></i>
+                               your current status on @TempData["StatusInformation"]
+                                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                                 </div>
+                             }
+                         }
+                    else 
+                    {
+                            <h5 class="card-title">Add Basic Information</h5>
+                 @if(TempData["AlertMessage"]!=null)
+                         {
+                        <div class="alert alert-success alert-dismissible fade show">
+                        @TempData["AlertMessage"]
+                         </div>
+                         }
+              <!-- Vertical Form -->
+              <form asp-action="AddBasicInformation" class="row g-3">
+                <div class="col-12">
+                  <label for="inputNanme4" class="form-label">DOB</label>
+                  <input asp-for="DOB" type="date" class="form-control" id="inputNanme4" required>
+                    @if(TempData["ageStatus"]!=null)
+                         {
+                        <div class="alert alert-danger bg-danger text-light border-0 alert-dismissible fade show" role="alert">
+                        @TempData["ageStatus"]
+                         </div>
+                         }
+                  <p>The user age should be greater or equal to 18 years</p>
+                </div>
+                <div class="col-12">
+                  <label for="inputEmail4" class="form-label">Qualification</label>
+                    <Select asp-for="Qualification" id="inputState" class="form-select">
+                    <option value="0">Choose </option>
+                    <option value="1">Below SSLC</option>
+                     <option value="2">SSLC or HSC</option>
+                      <option value="3">Degree</option>
+                  </Select>
+                 
+                </div>
+                <div class="col-12">
+                  <label for="inputEmail4" class="form-label">Gurdian Name</label>
+                  <input asp-for="GuradianName" type="text" class="form-control" id="inputEmail4" required>
+                </div>
+                <div class="col-12">
+                  <label for="inputEmail4" class="form-label">Address Line</label>
+                  <input asp-for="Line" type="text" class="form-control" id="inputEmail4" required>
+                </div>
+                <div class="col-12">
+                  <label for="inputPassword4" class="form-label">State</label>
+                  <input asp-for="State" type="text" class="form-control" id="inputPassword4" required>
+                </div>
+                <div class="col-12">
+                  <label for="inputAddress" class="form-label">City</label>
+                  <input asp-for="City" type="text" class="form-control" id="inputAddress" required>
+                </div>
+                  <div class="col-12">
+                  <label for="inputNanme4" class="form-label">Pin Code</label>
+                  <input asp-for="PinCode" type="number" class="form-control" id="inputNanme4" required>
+                </div>
+              
+                   <div class="text-center">
+                  <button type="submit" class="btn btn-primary">Add Basic Information</button>
+                
+                </div> 
+               
+                
+              </form><!-- Vertical Form -->
+
+                    }
+             
+            </div>
+          </div>
+          </div>
+
+           
+

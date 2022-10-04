@@ -1,0 +1,60 @@
+﻿@model IEnumerable<WEA.AccountCreation.Collabaration.Abstraction.OutDoorRelay.ChildDetails>
+
+@{
+    ViewData["Title"] = "MyChild";
+    Layout = "~/Views/Shared/_userLayout.cshtml";
+    int id = 0;
+}
+   <div class="col-12">
+              <div class="card recent-sales overflow-auto">
+                <div class="card-body">
+
+                  <h5 class="card-title">View Child Information</h5>
+
+                  <table class="table table-borderless datatable">
+                    <thead>
+                      <tr>
+                        <th scope="col">#</th>
+              <th>
+                @Html.DisplayNameFor(model => model.Name)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DOB)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Grade)
+            </th>
+            <th></th>
+            
+                      </tr>
+                    </thead>
+                    <tbody>
+                      
+                        @foreach (var item in Model) {
+                        
+                        id++;
+
+                      <tr>
+                        <th scope="row">@id</th>
+        <td>
+                @Html.DisplayFor(modelItem => item.Name)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.DOB)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Grade)
+            </td>
+                 <td><a   asp-action="DepositAmount" asp-route-id="@item.Id"><span class="badge bg-success">Deposit Amount</span></a></td>
+                      </tr>
+                  }
+                    </tbody>
+                  </table>
+
+                </div>
+
+              </div>
+            </div>
+
+
+

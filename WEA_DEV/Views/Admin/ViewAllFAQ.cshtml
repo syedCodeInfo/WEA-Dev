@@ -1,0 +1,83 @@
+﻿@model IEnumerable<WEA.AuthorisedUser.Collabration.Abstraction.OutdoorRelay.FAQList>
+
+@{
+    ViewData["Title"] = "ViewAllFAQ";
+    Layout = "~/Views/Shared/_adminLayout.cshtml";
+    int id = 0;
+}
+    <div class="col-12">
+              <div class="card recent-sales overflow-auto">
+                <div class="card-body">
+
+                  <h5 class="card-title">View All FAQ</h5>
+
+                  <table class="table table-borderless datatable">
+                    <thead>
+                      <tr>
+                        <th scope="col">#</th>
+              
+            <th>
+                @Html.DisplayNameFor(model => model.UserName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Question)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Answer)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.RequestedAt)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.UpdatedAt)
+            </th>
+            <th></th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      
+                        @foreach (var item in Model) {
+                        
+                        id++;
+
+                      <tr>
+                        <th scope="row">@id</th>
+                        <td>
+                @Html.DisplayFor(modelItem => item.UserName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Question)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Answer)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.RequestedAt)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.UpdatedAt)
+            </td>
+                        <td>     
+                            <div class="filter">
+                  <a class="icon" href="#" data-bs-toggle="dropdown"><i class="bi bi-three-dots"></i></a>
+                  <ul class="dropdown-menu dropdown-menu-end dropdown-menu-arrow">
+                    <li class="dropdown-header text-start">
+                      <h6>Action</h6>
+                    </li>
+
+                    <li><a class="dropdown-item" asp-action="SaveAnswer" asp-route-id="@item.FAQId">Response</a></li>
+     
+                   
+                  </ul>
+                </div></td>
+                      </tr>
+                  }
+                    </tbody>
+                  </table>
+
+                </div>
+
+              </div>
+            </div>
+
+

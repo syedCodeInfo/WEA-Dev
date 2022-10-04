@@ -1,0 +1,62 @@
+﻿@*
+    For more information on enabling MVC for empty projects, visit https://go.microsoft.com/fwlink/?LinkID=397860
+*@
+@model WEA.AccountCreation.Collabaration.Abstraction.InDoorRelay.BasicUserInfo
+@{
+}
+                <div class="pt-4 pb-2">
+                    <h5 class="card-title text-center pb-0 fs-4">Create an Accout</h5>
+                   <p class="text-center small">Enter your basic details to create account</p>
+                  </div>
+                   <form asp-action="Register" class="row g-3 needs-validation" novalidate>
+                    <div class="col-12">
+                    <label for="yourUserType" class="form-label">Choose User Type</label>
+                    <select asp-for="UserType" class="form-select" required>
+                      <option selected>Open this select menu</option>
+                      <option value="2">User</option>
+                      <option value="3">NGO</option>
+                     
+                    </select>
+                  </div>
+                    <div class="col-12">
+                      <label for="yourUserName" class="form-label">User Name</label>
+                      <input asp-for="UserName" class="form-control" id="yourName" type="text" required>
+                      <div class="invalid-feedback">UserName is required</div>
+                    </div>
+                    <div class="col-12">
+                      <label for="yourEmail" class="form-label">Email Address</label>
+                      <input asp-for="Email" class="form-control" id="yourName" type="email" required>
+                      <div class="invalid-feedback">Please, enter your valid email address!</div>
+                    </div>
+
+                    <div class="col-12">
+                      <label for="yourPhone" class="form-label">Your Contact Number</label>
+                      <input asp-for="Phone" class="form-control" id="yourEmail" type="number" maxlength="11" required>
+                      <div class="invalid-feedback">Please enter a valid Contact Number!</div>
+                    </div>
+                    <br />
+                    <div class="col-12">
+                      <label for="yourPassword" class="form-label">Password</label>
+                      <input asp-for="Password" class="form-control" id="yourPassword" type="password" required>
+                      <div class="invalid-feedback">Please enter your password!</div>
+                    </div>
+
+                  
+                    <div class="col-12">
+                      <button class="btn btn-primary w-100" type="submit">Create Account</button>
+                    </div>
+                    <div class="col-12">
+                      <p class="small mb-0">Already have an account? <a asp-controller="Authentication" asp-action="Index">Log in</a></p>
+                    </div>
+                  </form>
+                  
+                        @if(TempData["AlertMessage"]!=null)
+                         {
+                        <div class="alert alert-success alert-dismissible fade show">
+                        @TempData["AlertMessage"]
+                         </div>
+                         }
+    
+                 
+                 
+              

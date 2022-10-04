@@ -1,0 +1,76 @@
+﻿@model IEnumerable<WEA.Profile.Collabaration.Abstraction.OutdoorRelay.ProfileData>
+
+@{
+    ViewData["Title"] = "ViewMyProfile";
+    Layout = "~/Views/Shared/_ngoLayout.cshtml";
+}
+   <div class="col-xl-8">
+
+          <div class="card">
+            <div class="card-body pt-3">
+              <!-- Bordered Tabs -->
+              <ul class="nav nav-tabs nav-tabs-bordered">
+
+                <li class="nav-item">
+                  <button class="nav-link active" data-bs-toggle="tab" data-bs-target="#profile-overview">Overview</button>
+                </li>
+
+              
+
+              </ul>
+              @foreach (var item in Model) {
+              <div class="tab-content pt-2">
+
+                <div class="tab-pane fade show active profile-overview" id="profile-overview">
+    
+
+                  <h5 class="card-title">Profile Details</h5>
+
+                  <div class="row">
+                    <div class="col-lg-3 col-md-4 label ">Full Name</div>
+                    <div class="col-lg-9 col-md-8"> @Html.DisplayFor(modelItem => item.UserName)</div>
+                  </div>
+
+                  <div class="row">
+                    <div class="col-lg-3 col-md-4 label">Email Address</div>
+                    <div class="col-lg-9 col-md-8">    @Html.DisplayFor(modelItem => item.EmailAddress)</div>
+                  </div>
+
+                  <div class="row">
+                    <div class="col-lg-3 col-md-4 label">Contact Number</div>
+                    <div class="col-lg-9 col-md-8"> @Html.DisplayFor(modelItem => item.Phone)</div>
+                  </div>
+
+                  <div class="row">
+                    <div class="col-lg-3 col-md-4 label">Address</div>
+                    <div class="col-lg-9 col-md-8">  @Html.DisplayFor(modelItem => item.Line)</div>
+                  </div>
+
+                  <div class="row">
+                    <div class="col-lg-3 col-md-4 label">State</div>
+                    <div class="col-lg-9 col-md-8"> @Html.DisplayFor(modelItem => item.State)</div>
+                  </div>
+                         <div class="row">
+                    <div class="col-lg-3 col-md-4 label">Inaugrated Date</div>
+                    <div class="col-lg-9 col-md-8"> @Html.DisplayFor(modelItem => item.InaugrationDate)</div>
+                  </div>
+                  <div class="row">
+                    <div class="col-lg-3 col-md-4 label">City</div>
+                    <div class="col-lg-9 col-md-8"> @Html.DisplayFor(modelItem => item.City)</div>
+                  </div>
+
+                  <div class="row">
+                    <div class="col-lg-3 col-md-4 label">Pin Code</div>
+                    <div class="col-lg-9 col-md-8">   @Html.DisplayFor(modelItem => item.PinCode)</div>
+                  </div>
+
+                </div>
+
+
+              </div><!-- End Bordered Tabs -->
+}
+            </div>
+          </div>
+
+        </div>
+

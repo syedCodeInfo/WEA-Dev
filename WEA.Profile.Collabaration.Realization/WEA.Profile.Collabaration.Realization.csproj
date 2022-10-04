@@ -1,0 +1,12 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp3.1</TargetFramework>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\WEA.Profile.Collabaration.Abstraction\WEA.Profile.Collabaration.Abstraction.csproj" />
+    <ProjectReference Include="..\WEA.Profile.Gateway.Abstraction\WEA.Profile.Gateway.Abstraction.csproj" />
+  </ItemGroup>
+
+</Project>

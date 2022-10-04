@@ -1,0 +1,58 @@
+﻿@model IEnumerable<WEA.CoursePersistance.Collabaration.Abstraction.OutdoorRelay.CourseInformation>
+
+@{
+    ViewData["Title"] = "ViewAllCourse";
+    Layout = "~/Views/Shared/_ngoLayout.cshtml";
+     int id = 0;
+}
+
+
+            <div class="col-12">
+              <div class="card recent-sales overflow-auto">
+                <div class="card-body">
+                  <h5 class="card-title">View All Courses</h5>
+
+                  <table class="table table-borderless datatable">
+                    <thead>
+                      <tr>
+                        <th scope="col">#</th>
+                        <th>
+                @Html.DisplayNameFor(model => model.Name)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.TrainerName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.UserQualification)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.DurationInMonth)
+            </th>
+          
+            
+            <th></th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      
+                        @foreach (var item in Model) {
+                        
+                        id++;
+
+                      <tr>
+                        <th scope="row">@id</th>
+                          <td>    @Html.DisplayFor(modelItem => item.Name)</td>
+                        <td>   @Html.DisplayFor(modelItem => item.TrainerName)</td>
+                        <td>  @Html.DisplayFor(modelItem => item.UserQualification)</td>
+                        <td>  @Html.DisplayFor(modelItem => item.DurationInMonth)</td>
+                      
+                       
+                      </tr>
+                  }
+                    </tbody>
+                  </table>
+
+                </div>
+
+              </div>
+            </div>

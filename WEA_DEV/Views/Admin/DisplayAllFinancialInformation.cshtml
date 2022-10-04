@@ -1,0 +1,71 @@
+﻿@model IEnumerable<WEA.AuthorisedUser.Collabration.Abstraction.OutdoorRelay.FinanicalDetails>
+
+@{
+    ViewData["Title"] = "DisplayAllFinancialInformation";
+    Layout = "~/Views/Shared/_adminLayout.cshtml";
+    int id = 0;
+}
+ <div class="col-12">
+              <div class="card recent-sales overflow-auto">
+                <div class="card-body">
+
+                  <h5 class="card-title">View Child Deposited Details</h5>
+
+                  <table class="table table-borderless datatable">
+                    <thead>
+                      <tr>
+                        <th scope="col">#</th>
+                         <th>
+                @Html.DisplayNameFor(model => model.UserName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.ChildName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Amount)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CreatedAt)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.UpdatedAt)
+            
+            </th>
+            <th></th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      
+                        @foreach (var item in Model) {
+                        
+                        id++;
+
+                      <tr>
+                        <th scope="row">@id</th>
+                         <td>
+                @Html.DisplayFor(modelItem => item.UserName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.ChildName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Amount)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CreatedAt)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.UpdatedAt)
+            </td>
+                     
+               
+                      </tr>
+                  }
+                    </tbody>
+                  </table>
+
+                </div>
+
+              </div>
+            </div>
+

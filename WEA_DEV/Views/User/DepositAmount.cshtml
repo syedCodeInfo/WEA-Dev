@@ -1,0 +1,33 @@
+﻿@model WEA.FinanceAccount.Collabration.Abstraction.IndoorRelay.ChildFinancialAccount
+
+@{
+    ViewData["Title"] = "DepositAmount";
+    Layout = "~/Views/Shared/_userLayout.cshtml";
+}
+
+ <div class="col-lg-12">
+
+          <div class="card">
+            <div class="card-body">
+              
+              <h5 class="card-title">Finanical Deposit</h5>
+             <p><a asp-controller="User" asp-action="MyChild">View Child Info</a></p>
+              <!-- Vertical Form -->
+              <form asp-action="DepositAmount" class="row g-3">
+                   <div class="col-12">
+                  <label for="inputEmail4" class="form-label">Deposit Amount</label>
+                  <input asp-for="Amount" type="text" class="form-control" id="inputEmail4" required>
+                </div>
+                 <input asp-for="ChildId" type="hidden" class="form-control" id="inputEmail4" required >             
+       <div class="text-center">
+                  <button type="submit" class="btn btn-primary">Add Deposit</button>
+                
+                </div> 
+               
+                
+              </form><!-- Vertical Form -->
+
+              
+            </div>
+          </div>
+          </div>

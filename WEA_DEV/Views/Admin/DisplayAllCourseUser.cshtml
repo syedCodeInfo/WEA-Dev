@@ -1,0 +1,68 @@
+﻿@model IEnumerable<WEA.AuthorisedNGO.Collabration.Abstraction.OutdoorRelay.UserCourse>
+
+@{
+    ViewData["Title"] = "DisplayAllCourseUser";
+    Layout = "~/Views/Shared/_adminLayout.cshtml";
+    int id = 0;
+}
+
+    <div class="col-12">
+              <div class="card recent-sales overflow-auto">
+                <div class="card-body">
+
+                  <h5 class="card-title">View All UserBasedCourse</h5>
+
+                  <table class="table table-borderless datatable">
+                    <thead>
+                      <tr>
+                        <th scope="col">#</th>
+                         <th>
+                @Html.DisplayNameFor(model => model.UserName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.CourseName)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.RequestedAt)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.UpdatedAt)
+            </th>
+           
+            <th></th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      
+                        @foreach (var item in Model) {
+                        
+                        id++;
+
+                      <tr>
+                        <th scope="row">@id</th>
+                       <td>
+                @Html.DisplayFor(modelItem => item.UserName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.CourseName)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.RequestedAt)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.UpdatedAt)
+            </td>
+           
+                        <td>     
+            </td>
+                      </tr>
+                  }
+                    </tbody>
+                  </table>
+
+                </div>
+
+              </div>
+            </div>
+
+
